@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: busybox-with-sa
+spec:
+  serviceAccountName: admin
+  containers:
+    - name: busybox
+      image: busybox
+      command: ["/bin/sh","-c","sleep 3600"]

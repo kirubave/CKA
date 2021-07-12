@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-pod-with-cm
+spec:
+  containers:
+    - name: nginx 
+      image: nginx
+      env:
+        - name: ENVIRONMENT
+          valueFrom:
+            configMapKeyRef:
+              name: envcfgmap
+              key: var1
